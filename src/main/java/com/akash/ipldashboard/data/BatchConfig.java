@@ -3,7 +3,6 @@ package com.akash.ipldashboard.data;
 import com.akash.ipldashboard.model.Match;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.core.repository.JobRepository;
@@ -15,15 +14,12 @@ import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 
-@Configuration
 public class BatchConfig {
-
     private final String[] FIELD_NAMES = new String[]{
             "ID","City","Date","Season","MatchNumber","Team1","Team2","Venue","TossWinner","TossDecision","SuperOver","WinningTeam","WonBy","Margin","method","Player_of_Match","Team1Players","Team2Players","Umpire1","Umpire2"
     };
@@ -31,7 +27,7 @@ public class BatchConfig {
     @Bean
     public FlatFileItemReader<MatchInput> reader() {
         return new FlatFileItemReaderBuilder<MatchInput>()
-                .name("MatchItemReader")
+                .name("personItemReader")
                 .resource(new ClassPathResource("match-data.csv"))
                 .delimited()
                 .names(FIELD_NAMES)
@@ -51,8 +47,7 @@ public class BatchConfig {
     public JdbcBatchItemWriter<Match> writer(DataSource dataSource) {
         return new JdbcBatchItemWriterBuilder<Match>()
                 .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
-                .sql("INSERT INTO match (id, city, date, team1, team2, venue, toss_winner, toss_decision, winning_team, won_by, margin, player_of_match, umpire1, umpire2) "
-                        + "VALUES (:id, :city, :date, :team1, :team2, :venue, :tossWinner, :tossDecision, :winningTeam, :wonBy, :margin, :playerOfMatch, :umpire1, :umpire2)")
+                .sql("INSERT INTO match (id, city, date, team1, team2, venue, toss_winner, toss_decision, winning_team, won_by, margin, player_of_match, umpire1, umpire2) VALUES (:id, :city, :date, :team1, :team2, :venue, :tossWinner, :tossDecision, :winningTeam, :wonBy, :margin, :playerOfMatch, :umpire1, :umpire2)")
                 .dataSource(dataSource)
                 .build();
     }

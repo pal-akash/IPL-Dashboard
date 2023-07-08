@@ -11,7 +11,6 @@ public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
     private String teamName;
     private long totalMatches;
     private long totalWins;
@@ -56,12 +55,9 @@ public class Team {
     @Override
     public String toString() {
         return "Team{" +
-                "team_name='" + teamName + '\'' +
+                "teamName='" + teamName + '\'' +
                 ", totalMatches=" + totalMatches +
                 ", totalWins=" + totalWins +
                 '}';
-    }
-
-    public Team() {
     }
 }

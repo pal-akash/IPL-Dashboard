@@ -5,20 +5,20 @@ public class MatchInput {
     private String city;
     private String date;
     private String season;
-    private String matchNumber;
+    private String match_number;
     private String team1;
     private String team2;
     private String venue;
-    private String tossWinner;
-    private String tossDecision;
-    private String superOver;
-    private String winningTeam;
-    private String wonBy;
+    private String toss_winner;
+    private String toss_decision;
+    private String super_over;
+    private String winning_team;
+    private String won_by;
     private String margin;
     private String method;
-    private String player_of_Match;
-    private String team1Players;
-    private String team2Players;
+    private String player_of_match;
+    private String team1_players;
+    private String team2_players;
     private String umpire1;
     private String umpire2;
 
@@ -54,12 +54,12 @@ public class MatchInput {
         this.season = season;
     }
 
-    public String getMatchNumber() {
-        return matchNumber;
+    public String getMatch_number() {
+        return match_number;
     }
 
-    public void setMatchNumber(String matchNumber) {
-        this.matchNumber = matchNumber;
+    public void setMatch_number(String match_number) {
+        this.match_number = match_number;
     }
 
     public String getTeam1() {
@@ -86,44 +86,44 @@ public class MatchInput {
         this.venue = venue;
     }
 
-    public String getTossWinner() {
-        return tossWinner;
+    public String getToss_winner() {
+        return toss_winner;
     }
 
-    public void setTossWinner(String tossWinner) {
-        this.tossWinner = tossWinner;
+    public void setToss_winner(String toss_winner) {
+        this.toss_winner = toss_winner;
     }
 
-    public String getTossDecision() {
-        return tossDecision;
+    public String getToss_decision() {
+        return toss_decision;
     }
 
-    public void setTossDecision(String tossDecision) {
-        this.tossDecision = tossDecision;
+    public void setToss_decision(String toss_decision) {
+        this.toss_decision = toss_decision;
     }
 
-    public String getSuperOver() {
-        return superOver;
+    public String getSuper_over() {
+        return super_over;
     }
 
-    public void setSuperOver(String superOver) {
-        this.superOver = superOver;
+    public void setSuper_over(String super_over) {
+        this.super_over = super_over;
     }
 
-    public String getWinningTeam() {
-        return winningTeam;
+    public String getWinning_team() {
+        return winning_team;
     }
 
-    public void setWinningTeam(String winningTeam) {
-        this.winningTeam = winningTeam;
+    public void setWinning_team(String winning_team) {
+        this.winning_team = winning_team;
     }
 
-    public String getWonBy() {
-        return wonBy;
+    public String getWon_by() {
+        return won_by;
     }
 
-    public void setWonBy(String wonBy) {
-        this.wonBy = wonBy;
+    public void setWon_by(String won_by) {
+        this.won_by = won_by;
     }
 
     public String getMargin() {
@@ -142,28 +142,28 @@ public class MatchInput {
         this.method = method;
     }
 
-    public String getPlayer_of_Match() {
-        return player_of_Match;
+    public String getPlayer_of_match() {
+        return player_of_match;
     }
 
-    public void setPlayer_of_Match(String player_of_Match) {
-        this.player_of_Match = player_of_Match;
+    public void setPlayer_of_match(String player_of_match) {
+        this.player_of_match = player_of_match;
     }
 
-    public String getTeam1Players() {
-        return team1Players;
+    public String getTeam1_players() {
+        return team1_players;
     }
 
-    public void setTeam1Players(String team1Players) {
-        this.team1Players = team1Players;
+    public void setTeam1_players(String team1_players) {
+        this.team1_players = team1_players;
     }
 
-    public String getTeam2Players() {
-        return team2Players;
+    public String getTeam2_players() {
+        return team2_players;
     }
 
-    public void setTeam2Players(String team2Players) {
-        this.team2Players = team2Players;
+    public void setTeam2_players(String team2_players) {
+        this.team2_players = team2_players;
     }
 
     public String getUmpire1() {

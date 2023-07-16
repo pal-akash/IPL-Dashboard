@@ -7,6 +7,7 @@ import com.akash.ipldashboard.repository.TeamRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -40,6 +41,11 @@ public class TeamController {
         //return this.matchRepository.getByTeam1AndDateBetweenOrTeam2AndDateBetweenOrderByDateDesc(teamName, startDate, endDate, teamName, startDate, endDate);
 
         return this.matchRepository.getMatchesByTeamBetweenDates(teamName, startDate,endDate);
+    }
+
+    @GetMapping("/api/team")
+    public Iterable<Team> getAllTeam(){
+        return this.teamRepository.findAll();
     }
 
 }
